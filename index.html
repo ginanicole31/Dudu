@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Valentine 💖</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #fce4ec 0%, #e1bee7 100%);
+            font-family: 'Segoe UI', sans-serif;
+            overflow: hidden;
+        }
+        #card {
+            background: white;
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 5px solid #ff85a2;
+            max-width: 350px;
+            z-index: 10;
+        }
+        h1 { color: #9b5de5; font-size: 24px; }
+        img { width: 100%; border-radius: 20px; margin-bottom: 15px; }
+        button { padding: 10px 25px; font-size: 18px; border-radius: 50px; border: none; cursor: pointer; font-weight: bold; }
+        #yesBtn { background: #ff4d6d; color: white; }
+        #noBtn { background: #ba68c8; color: white; position: absolute; }
+        .hidden { display: none; }
+        .cute-msg { color: #d81b60; font-weight: bold; font-size: 20px; }
+    </style>
+</head>
+<body>
+    <div id="card">
+        <div id="ask">
+            <h1>Will you be my Valentine? 🧸 </h1>
+            <img src="https://media.tenor.com/X_S4oY64q08AAAAi/bubu-dudu-bubu-y-dudu.gif">
+            <div style="height: 50px;">
+                <button id="yesBtn">YES! ✨</button>
+                <button id="noBtn">NO</button>
+            </div>
+        </div>
+        <div id="success" class="hidden">
+            <h1>YAYYY! ❤️</h1>
+            <img src="https://media.tenor.com/7vY5H4W_M7MAAAAi/bubu-dudu-bubu.gif">
+            <p class="cute-msg">I knew you'd say yes! <br> I love you beary much! 🍯✨</p>
+        </div>
+    </div>
+    <script>
+        const no = document.getElementById('noBtn');
+        const yes = document.getElementById('yesBtn');
+        no.addEventListener('mouseover', () => {
+            no.style.left = Math.random() * (window.innerWidth - 100) + 'px';
+            no.style.top = Math.random() * (window.innerHeight - 50) + 'px';
+            no.style.position = 'fixed';
+        });
+        yes.addEventListener('click', () => {
+            document.getElementById('ask').classList.add('hidden');
+            document.getElementById('success').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
